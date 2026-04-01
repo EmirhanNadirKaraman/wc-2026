@@ -1,0 +1,16 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# SPA catch-all redirect — all routes serve index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[context.production.environment]
+  # Set VITE_API_URL to your Railway backend URL in Netlify dashboard
+  # e.g. VITE_API_URL = "https://wc2026-backend.up.railway.app"

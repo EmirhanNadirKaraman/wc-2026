@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>L.T.A.S. World Cup 2026</title>
+  <meta name="description" content="L.T.A.S. World Cup 2026 canlı puan durumu, maçlar, gruplar, turnuva ağacı ve tahmin ligi." />
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA2NCA2NCc+CjxyZWN0IHdpZHRoPSc2NCcgaGVpZ2h0PSc2NCcgcng9JzE0JyBmaWxsPScjYjMxMjE3Jy8+CjxjaXJjbGUgY3g9JzI3JyBjeT0nMzInIHI9JzExJyBmaWxsPScjZmZmJy8+CjxjaXJjbGUgY3g9JzMwJyBjeT0nMzInIHI9JzknIGZpbGw9JyNiMzEyMTcnLz4KPHBvbHlnb24gcG9pbnRzPSczNywzMiA0MywzNCAzOSwyOSAzOSwzNSA0MywzMCcgZmlsbD0nI2ZmZicvPgo8dGV4dCB4PSczMicgeT0nNTYnIHRleHQtYW5jaG9yPSdtaWRkbGUnIGZvbnQtc2l6ZT0nMTAnIGZvbnQtZmFtaWx5PSdBcmlhbCcgZmlsbD0nI2ZmZic+TFRBUzwvdGV4dD4KPC9zdmc+" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.v7.css" />
+</head>
+<body>
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-2"></div>
+
+  <div id="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">🇹🇷</div>
+        <div>
+          <div class="brand-eyebrow">L.T.A.S.</div>
+          <div class="brand-title">L.T.A.S. World Cup 2026</div>
+        </div>
+      </div>
+      <div class="top-actions">
+        <button id="shareBtn" class="ghost-btn">Paylaş</button>
+        <a id="formBtn" class="hero-btn secondary" href="#" target="_blank" rel="noopener noreferrer">Tahmin Formu</a>
+      </div>
+    </header>
+
+    <section id="home" class="panel active">
+      <div class="hero">
+        <div class="hero-main card">
+          <div class="hero-flagline">L.T.A.S. 🇹🇷 World Cup'26 🏆</div>
+          <h1 id="site-title">L.T.A.S. World Cup 2026</h1>
+          <p id="site-subtitle">Dünya Kupası Tahmin Ligi</p>
+          <div class="hero-badges">
+            <span class="badge">Canlı Puan Takibi</span>
+            <span class="badge">Türkiye Odaklı Takip</span>
+            <span class="badge">Tahmin Ligi</span>
+            <span class="badge badge-red" id="site-status">Bağlanıyor</span>
+          </div>
+
+          <div class="countdown-grid">
+            <div class="count-card">
+              <div class="count-label">Turnuva Başlangıcı</div>
+              <div class="count-value" id="tournamentCountdown">-</div>
+              <div class="count-sub">11 Haziran 2026 • 22.00</div>
+            </div>
+            <div class="count-card">
+              <div class="count-label">Türkiye Maçına Kalan</div>
+              <div class="count-value" id="turkeyCountdown">-</div>
+              <div class="count-sub" id="turkeyCountdownSub">Türkiye maçı bekleniyor</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div class="card stat">
+            <div class="stat-label">Lider</div>
+            <div class="stat-value" id="leader-name">-</div>
+            <div class="stat-sub" id="leader-points">yükleniyor...</div>
+          </div>
+          <div class="card stat">
+            <div class="stat-label">Katılımcı</div>
+            <div class="stat-value" id="user-count">-</div>
+            <div class="stat-sub">aktif kullanıcı</div>
+          </div>
+          <div class="card stat">
+            <div class="stat-label">Maçlar</div>
+            <div class="stat-value" id="match-progress">-</div>
+            <div class="stat-sub">oynanan / toplam</div>
+          </div>
+          <div class="card stat">
+            <div class="stat-label">Son Senkron</div>
+            <div class="stat-value stat-value-sm" id="last-sync">-</div>
+            <div class="stat-sub">canlı güncelleme</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="home-grid">
+        <section class="card featured-card">
+          <div class="section-head">
+            <h2>Öne Çıkan Maç</h2>
+            <span id="featuredBadge" class="pill">Bağlanıyor</span>
+          </div>
+          <div id="featuredMatch" class="skeleton-block"></div>
+        </section>
+
+        <section class="card mini-card">
+          <div class="section-head">
+            <h2>Bugün Oynanacak</h2>
+            <span id="todayCount" class="pill">-</span>
+          </div>
+          <div id="todayMatches" class="mini-list skeleton-list"></div>
+        </section>
+
+        <section class="card mini-card">
+          <div class="section-head">
+            <h2>Zirve</h2>
+            <span class="pill">Liderlik Durumu</span>
+          </div>
+          <div id="leaderPulse" class="skeleton-block small"></div>
+        </section>
+
+        <section class="card quick-card">
+          <div class="section-head">
+            <h2>Hızlı Geçiş</h2>
+            <span class="pill">Mobil kısa yol</span>
+          </div>
+          <div class="quick-links">
+            <button class="quick-link" data-jump="leaderboard">Puan Durumu</button>
+            <button class="quick-link" data-jump="matches">Maçlar</button>
+            <button class="quick-link" data-jump="groups">Gruplar</button>
+            <button class="quick-link" data-jump="knockout">Ağaç</button>
+            <button class="quick-link" data-jump="predictions">Tahminler</button>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="leaderboard" class="panel"></section>
+    <section id="matches" class="panel"></section>
+    <section id="groups" class="panel"></section>
+    <section id="knockout" class="panel"></section>
+    <section id="predictions" class="panel"></section>
+
+    <nav class="bottom-nav card">
+      <button class="nav-tab active" data-tab="home">Ana Sayfa</button>
+      <button class="nav-tab" data-tab="leaderboard">Puan</button>
+      <button class="nav-tab" data-tab="matches">Maçlar</button>
+      <button class="nav-tab" data-tab="groups">Gruplar</button>
+      <button class="nav-tab" data-tab="knockout">Ağaç</button>
+      <button class="nav-tab" data-tab="predictions">Tahminler</button>
+    </nav>
+
+    <div id="status-bar" class="status-bar hidden"></div>
+  </div>
+
+  <script>window.LTAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbw1m6RKs0HW2bAHmObv88PQBqKt0dPbPXfoXjozEziwAGKSonZCTU17M2an8iAAujuk/exec";</script>
+  <script src="./app.v7.js"></script>
+</body>
+</html>
